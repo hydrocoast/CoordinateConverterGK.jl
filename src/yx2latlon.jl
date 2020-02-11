@@ -61,6 +61,11 @@ function yx2latlon(φ₀::T, λ₀::T, N::T, E::T) where T <: Float64
     return φ, λ
 end
 # -------------------------------------
+"""
+λ, φ = xy2lonlat(λ₀::T, φ₀::T, E::T, N::T) where T <: Float64
+
+See [`yx2latlon`](@ref)
+"""
 xy2lonlat(λ₀::T, φ₀::T, E::T, N::T) where T <: Float64 = reverse(yx2latlon(φ₀, λ₀, N, E))
 # -------------------------------------
 function yx2latlon_ja(zone::Int, N::T, E::T) where T <: Float64
