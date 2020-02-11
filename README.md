@@ -11,12 +11,13 @@
 ## Overview
 CoordinateConverterGK.jl is a Julia package for conversion between the Cartesian coordinates and the geographic coordinates for a point with the Gauss-Krüger Projection. The formulae are based on some documentations in websites of [the Geospatial Information Authority of Japan](https://www.gsi.go.jp/ENGLISH/index.html) and publications of this organization (see **References**).
 
+<!--
 ## Installation
 You can install the latest version using the built-in package manager (accessed by pressing `]` in the Julia REPL) to add the package.
 ```julia
 pkg> add CoordinateConverterGK
 ```
-
+-->
 ## Usage
 ### General use  
 Given a central meridian `λ₀` and latitude of origin `φ₀`, Cartesian coordinates can be converted with the following code:
