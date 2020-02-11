@@ -47,6 +47,11 @@ function latlon2yx(φ₀::T, λ₀::T, φ::T, λ::T) where T <: Float64
     return N, E
 end
 # -------------------------------------
+"""
+E, N = lonlat2xy(λ₀::T, φ₀::T, λ::T, φ::T) where T <: Float64
+
+See [`lanlon2yx`](@ref)
+"""
 lonlat2xy(λ₀::T, φ₀::T, λ::T, φ::T) where T <: Float64 = reverse(latlon2yx(φ₀, λ₀, φ, λ))
 
 # -------------------------------------
