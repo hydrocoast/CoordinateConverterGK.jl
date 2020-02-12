@@ -9,7 +9,7 @@
 </p>  
 
 ## Overview
-CoordinateConverterGK.jl is a Julia package for conversion between the Cartesian coordinates and the geographic coordinates for a point with the Gauss-Krüger Projection. The formulae are based on some documentations in websites of [the Geospatial Information Authority of Japan](https://www.gsi.go.jp/ENGLISH/index.html) and publications of this organization (see **References**).
+CoordinateConverterGK.jl is a Julia package for conversion between the Cartesian coordinates and the geographic coordinates for a point with the Gauss-Krüger Projection. The formulae are based on documents and publications of [the Geospatial Information Authority of Japan](https://www.gsi.go.jp/ENGLISH/index.html) (see **References**).
 
 <!--
 ## Installation
@@ -45,6 +45,10 @@ Instead, these functions require the zone number of interest (1 to 19).
 
 
 ## References
-- Kawase, K. (2013) Concise Derivation of Extensive Coordinate Conversion Formulae in the Gauss-Krüger Projection, Bulletin of the Geospatial Information Authority of Japan, **60**, pp.1&ndash;6  
+- Kawase, K. (2013) [Concise Derivation of Extensive Coordinate Conversion Formulae in the Gauss-Krüger Projection](https://www.gsi.go.jp/common/000065826.pdf), Bulletin of the Geospatial Information Authority of Japan, **60**, pp.1&ndash;6  
 
-- Kawase, K. (2011) A More Concise Method of Calculation for the Coordinate Conversion between Geographic and Plane Rectangular Coordinates on the Gauss-Krüger Projection (in Japanese), 国土地理院時報, **121**, pp.109&ndash;124.
+- Kawase, K. (2011) [A More Concise Method of Calculation for the Coordinate Conversion between Geographic and Plane Rectangular Coordinates on the Gauss-Krüger Projection](https://www.gsi.go.jp/common/000061216.pdf) (in Japanese), 国土地理院時報, **121**, pp.109&ndash;124.
+
+- https://vldb.gsi.go.jp/sokuchi/surveycalc/surveycalc/algorithm/bl2xy/bl2xy.htm
+
+- https://vldb.gsi.go.jp/sokuchi/surveycalc/surveycalc/algorithm/xy2bl/xy2bl.htm
