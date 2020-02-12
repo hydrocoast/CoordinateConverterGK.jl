@@ -13,6 +13,14 @@ This function is based on the following documents:
 - φ , λ  : geographic latitude and longitude
 ### return values
 - N, E   : plane rectangular coordinates northing and easting
+
+### Examples
+```julia-repl
+julia> # ANSWER: y = 11543.6883, x = 22916.2436
+
+julia> latlon2yx(36.0, 139.0+5.0/6.0, 36.103774791666666, 140.08785504166664)
+(11543.688321484718, 22916.24355431881)
+```
 """
 function latlon2yx(φ₀::T, λ₀::T, φ::T, λ::T) where T <: Float64
 

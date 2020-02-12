@@ -20,12 +20,12 @@ pkg> add CoordinateConverterGK
 -->
 ## Usage
 ### General use  
-Given a central meridian `λ₀` and latitude of origin `φ₀`, Cartesian coordinates can be converted with the following code:
+Given a central meridian `λ₀` and latitude of origin `φ₀` (in degrees), Cartesian coordinates can be converted with the following code:
 ```julia
 using CoordinateConverterGK
 λ, φ = xy2lonlat(λ₀, φ₀, easting, northing)
 ```
-where `λ` and `φ` are the converted longitude and latitude, `easting` and `northing` are the eastward and northward distances (in meter) from the origin, respectively.
+where `λ` and `φ` are the converted longitude and latitude, `easting` and `northing` are the eastward and northward distances (in meters) from the origin, respectively.
 A function `yx2latlon` is available in the same manner:
 ```julia
 φ, λ = yx2latlon(φ₀, λ₀, northing, easting)
@@ -43,6 +43,16 @@ Instead, these functions require the zone number of interest (1 to 19).
 λ, φ = xy2lonlat_ja(9, easting, northing) # in case of zone IX
 ```
 
+## Examples
+```julia
+# ANSWER: lat = 36.10404755, lon = 140.08539843
+julia> yx2latlon(36.0, 139.83333333, 11573.375, 22694.980)
+(36.104047552508895, 140.08539842726532)
+
+# ANSWER: y = 11543.6883, x = 22916.2436
+julia> latlon2yx(36.0, 139.0+5.0/6.0, 36.103774791666666, 140.08785504166664)
+(11543.688321484718, 22916.24355431881)
+```
 
 ## References
 - Kawase, K. (2013) [Concise Derivation of Extensive Coordinate Conversion Formulae in the Gauss-Krüger Projection](https://www.gsi.go.jp/common/000065826.pdf), Bulletin of the Geospatial Information Authority of Japan, **60**, pp.1&ndash;6  
