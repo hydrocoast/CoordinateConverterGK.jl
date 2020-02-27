@@ -38,7 +38,7 @@ x, y = lonlat2xy(λ₀, φ₀, λ, φ)
 ### Japan Plane Rectangular Coordinate System
 When the Japan Plane Rectangular Coordinate System is adopted,
 functions such as `xy2lonlat_ja` and `lonlat2xy_ja` can omit the coordinates of origin `λ₀`, `φ₀`.
-Instead, these functions require the zone number of interest (1 to 19).
+These functions require the zone number of interest (1 to 19) instead.
 ```julia
 λ, φ = xy2lonlat_ja(9, easting, northing) # in case of zone IX
 ```
