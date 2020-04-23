@@ -1,6 +1,5 @@
 """
-
-N, E = latlon2yx(φ₀::T, λ₀::T, φ::T, λ::T) where T <: Float64
+    N, E = latlon2yx(φ₀::T, λ₀::T, φ::T, λ::T) where T <: Float64
 
 Coordinate transformation between geographic and plane rectangular coordinates on the Gauss-Krüger Projection
 This function is based on the following documents:
@@ -56,7 +55,7 @@ function latlon2yx(φ₀::T, λ₀::T, φ::T, λ::T) where T <: Float64
 end
 # -------------------------------------
 """
-E, N = lonlat2xy(λ₀::T, φ₀::T, λ::T, φ::T) where T <: Float64
+    E, N = lonlat2xy(λ₀::T, φ₀::T, λ::T, φ::T) where T <: Float64
 
 See [`lanlon2yx`](@ref)
 """
@@ -64,9 +63,7 @@ lonlat2xy(λ₀::T, φ₀::T, λ::T, φ::T) where T <: Float64 = reverse(latlon2
 
 # -------------------------------------
 function latlon2yx_ja(zone::Int, φ::T, λ::T) where T <: Float64
-    if !(0 < zone < 20)
-        error("system must be a integer from 1 to 19")
-    end
+    !(0 < zone < 20) && error("zone ID be a integer in the range of 1 to 19.")
     return latlon2yx(Origin_LatLon_Japan[zone,:]..., φ, λ)
 end
 # -------------------------------------
