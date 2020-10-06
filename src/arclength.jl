@@ -1,4 +1,4 @@
-function arclength(φ₀) where T <: Float64
+function arclength(φ₀)
 # A terms
     Acoef =  [  -3/2*[ 1.0  0.0  -1/8      0.0      -1/64]; # A₁
                15/16*[ 0.0  1.0   0.0     -1/4        0.0]; # A₂
