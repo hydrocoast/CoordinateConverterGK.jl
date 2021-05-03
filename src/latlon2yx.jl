@@ -51,7 +51,7 @@ function latlon2yx(φ₀, λ₀, φ, λ)
     N = A̅*(ξ′ + sum([αj[j]sin(2j*ξ′)cosh(2j*η′) for j=1:5])) - S̅φ₀
     E = A̅*(η′ + sum([αj[j]cos(2j*ξ′)sinh(2j*η′) for j=1:5]))
 
-    return N, E
+    return [N, E]
 end
 # -------------------------------------
 """
