@@ -21,6 +21,6 @@ using Test
     @test (abs(y - 11543.6883) < 1e-4) & (abs(x - 22916.2436) < 1e-4)
 
     # args in reverse order
-    @test yx2latlon_ja(9, northing, easting) === reverse(xy2lonlat_ja(9, easting, northing))
-    @test latlon2yx_ja(9, lat, lon) === reverse(lonlat2xy_ja(9, lon, lat))
+    @test yx2latlon_ja(9, northing, easting) == reverse(xy2lonlat_ja(9, easting, northing))
+    @test latlon2yx_ja(9, lat, lon) == reverse(lonlat2xy_ja(9, lon, lat))
 end
