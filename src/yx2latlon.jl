@@ -66,7 +66,7 @@ function yx2latlon(φ₀, λ₀, N, E)
     m = m₀*A₀*(1/(1+n))*sqrt( (cos(ξ′)^2+sinh(η′)^2)/(σ′^2+τ′^2) * (1+((1-n)tan(φ)/(1+n))^2) )
     =#
 
-    return [φ, λ]
+    return [φ λ]
 end
 # -------------------------------------
 """
@@ -74,12 +74,12 @@ end
 
 See [`yx2latlon`](@ref)
 """
-xy2lonlat(λ₀, φ₀, E, N) = reverse(yx2latlon(φ₀, λ₀, N, E))
+xy2lonlat(λ₀, φ₀, E, N) = reverse(yx2latlon(φ₀, λ₀, N, E), dims=2)
 # -------------------------------------
 function yx2latlon_ja(zone::Integer, N, E)
     !(0 < zone < 20) && error("zone ID must be a integer in the range of 1 to 19.")
     return yx2latlon(Origin_LatLon_Japan[zone,:]..., N, E)
 end
 # -------------------------------------
-xy2lonlat_ja(zone::Integer, E, N) = reverse(yx2latlon_ja(zone, N, E))
+xy2lonlat_ja(zone::Integer, E, N) = reverse(yx2latlon_ja(zone, N, E), dims=2)
 # -------------------------------------

@@ -51,7 +51,7 @@ function latlon2yx(φ₀, λ₀, φ, λ)
     N = A̅*(ξ′ + sum([αj[j]sin(2j*ξ′)cosh(2j*η′) for j=1:5])) - S̅φ₀
     E = A̅*(η′ + sum([αj[j]cos(2j*ξ′)sinh(2j*η′) for j=1:5]))
 
-    return [N, E]
+    return [N E]
 end
 # -------------------------------------
 """
@@ -59,7 +59,7 @@ end
 
 See [`lanlon2yx`](@ref)
 """
-lonlat2xy(λ₀, φ₀, λ, φ) = reverse(latlon2yx(φ₀, λ₀, φ, λ))
+lonlat2xy(λ₀, φ₀, λ, φ) = reverse(latlon2yx(φ₀, λ₀, φ, λ), dims=2)
 
 # -------------------------------------
 function latlon2yx_ja(zone::Integer, φ, λ)
@@ -67,5 +67,5 @@ function latlon2yx_ja(zone::Integer, φ, λ)
     return latlon2yx(Origin_LatLon_Japan[zone,:]..., φ, λ)
 end
 # -------------------------------------
-lonlat2xy_ja(zone::Integer, λ, φ)  = reverse(latlon2yx_ja(zone, φ, λ))
+lonlat2xy_ja(zone::Integer, λ, φ)  = reverse(latlon2yx_ja(zone, φ, λ), dims=2)
 # -------------------------------------
